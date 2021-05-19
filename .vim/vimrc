@@ -18,8 +18,8 @@ set hlsearch!
 set clipboard=unnamed
 set undodir=~/.vim/undodir
 
-set cmdheight=2
-set updatetime=300
+" set cmdheight=2
+" set updatetime=300
 set shortmess+=c
 
 if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -51,6 +51,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'aklt/plantuml-syntax'
 Plug 'tyru/open-browser.vim'
 Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Lightline configuration
@@ -64,8 +65,8 @@ let g:lightline = {
       \   },
       \ }
 autocmd User CocStatusChange,CocDiagnosticsChange call lightline#update()
-set noshowmode
-set laststatus=2
+" set noshowmode
+" set laststatus=2
 
 " NERDTree configuration
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -148,14 +149,14 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>F <Plug>(coc-format-selected)
+vmap <leader>F <Plug>(coc-format-selected)
+nmap <leader>F <Plug>(coc-format-selected)
 
 " Formatting whole file 
-xmap <leader>F  <Plug>(coc-format)
-vmap <leader>F  <Plug>(coc-format)
-nmap <leader>F  <Plug>(coc-format)
+xmap <leader>f <Plug>(coc-format)
+vmap <leader>f <Plug>(coc-format)
+nmap <leader>f <Plug>(coc-format)
 
 augroup mygroup
   autocmd!
